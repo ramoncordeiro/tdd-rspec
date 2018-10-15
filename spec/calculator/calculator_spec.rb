@@ -16,7 +16,7 @@ describe Calculator do
 			expect(result).to eq(2)
 		end
 
-		xit 'with negative numbers' do
+		it 'with negative numbers' do
 			result = subject.sum(-5,-7)
 			expect(result).to eq(-12)
 		end
