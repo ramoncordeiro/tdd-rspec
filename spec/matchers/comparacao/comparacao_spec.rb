@@ -23,7 +23,26 @@ describe 'Matchers Comparacao' do
 		expect(7).to be_between(2,7).inclusive 
 	end
 
+	#agrega os erros para mostrar todos no final. Ao inves de mostrar o primeiro 
+	# e em seguida parar nele, sem mostrar os demais
+=begin	
+	it 'be_between inclusive' do
+		aggregate_failures do
+			expect(5).to be_between(2,7).inclusive
+			expect(1).to be_between(2,7).inclusive
+			expect(8).to be_between(2,7).inclusive 
+		end
+	end
 
+	#outro jeito de mostrar falhas agregadas
+	it 'be_between inclusive', :aggregate_failures do
+		#aggregate_failures do
+			expect(5).to be_between(2,7).inclusive
+			expect(1).to be_between(2,7).inclusive
+			expect(8).to be_between(2,7).inclusive 
+		#end
+	end
+=end
 	it 'be_between exclusive' do
 		expect(5).to be_between(2,7).exclusive
 		expect(3).to be_between(2,7).exclusive
